@@ -1,9 +1,9 @@
 // live_3vZ932cA3h4VazEOwxEEC0YV5LIOFsUTwToRXNlwal9kDv6iW9m3OXoEc1LpZPrR
-import './styles.css';
 import { fetchBreeds, fetchCatByBreed } from "./cat-api";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SlimSelect from 'slim-select'
 import 'slim-select/dist/slimselect.css';
+import './styles.css';
 
 const elements = {
     select: document.querySelector('.breed-select'),
@@ -20,8 +20,8 @@ loader.classList.replace('loader', 'is-hidden');
 
 let arrayIdBreeds = [];
 fetchBreeds().then(data => {
-    data.forEach(elem => {
-        arrayIdBreeds.push({ value: elem.id, text: elem.name });
+    data.forEach(element => {
+        arrayIdBreeds.push({ value: element.id, text: element.name });
     });
     new SlimSelect({
         data: arrayIdBreeds,
