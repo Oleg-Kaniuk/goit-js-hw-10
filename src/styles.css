@@ -49,7 +49,7 @@ img {
   background-color: orange;
 }
 
-.loader {
+/* .loader {
   position: relative;
   color: #de3500;
   width: 0;
@@ -97,4 +97,4 @@ img {
   100% {
     transform: rotate(720deg) scale(0.15);
   }
-}
+} */

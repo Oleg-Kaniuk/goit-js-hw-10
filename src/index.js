@@ -74,14 +74,16 @@ const elements = {
     catInfo: document.querySelector('.cat-info'),
 };
 const { select, loader, error, catInfo } = elements;
-catInfo.classList.add('is-hidden');
+select.classList.add('is-hidden');
 error.classList.add('is-hidden');
-loader.classList.replace('loader', 'is-hidden');
+loader.classList.remove('is-hidden');
 let breedOptions = [];
 fetchBreeds()
     .then(data => {
         breedOptions = data.map(breed => ({ value: breed.id, text: breed.name }));
         initializeSelect();
+        select.classList.remove('is-hidden'); // Відобразити селект
+        loader.classList.add('is-hidden');
     })
     .catch(onErrorFetch);
 function initializeSelect() {
@@ -92,8 +94,8 @@ function initializeSelect() {
     select.addEventListener('change', onSelectBreedCats);
 }
 function onErrorFetch() {
-    loader.classList.add('is-hidden');
-    select.classList.remove('is-hidden');
+    loader.classList.add('is-hidden'); // Приховати лоадер
+    select.classList.remove('is-hidden'); // Відобразити селект
     Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
 }
 function onSelectBreedCats(evt) {
