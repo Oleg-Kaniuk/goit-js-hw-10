@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: orange;
+  background-color: black;
   color: black;
   line-height: 1.7;
 }
@@ -46,7 +46,7 @@ img {
   gap: 30px;
   margin-top: 10px;
   padding: 10px;
-  background-color: orange;
+  background-color: yellow;
 }
 
 /* .loader {
